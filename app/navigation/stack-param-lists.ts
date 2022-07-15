@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
-import { PaymentType } from "@galoymoney/client"
+import { GaloyGQL, PaymentType } from "@galoymoney/client"
 import { LNURLPayParams } from "js-lnurl"
 import { contacts_me_contacts } from "../screens/contacts-screen/__generated__/contacts"
 import { AccountType, AuthenticationScreenPurpose, PinScreenPurpose } from "../utils/enum"
 
-export type TransactionDetail = WalletTransaction & {
+export type TransactionDetail = GaloyGQL.Transaction & {
   usdAmount: number
   description: string
   isReceive: boolean
