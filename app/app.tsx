@@ -47,7 +47,7 @@ import ErrorBoundary from "react-native-error-boundary"
 import { ErrorScreen } from "./screens/error-screen"
 import Toast from "react-native-toast-message"
 import {
-  AppConfigurationContext,
+  AppConfigurationContextNamespace,
   AppConfiguration,
   loadAppConfig,
 } from "./context/app-configuration"
@@ -271,7 +271,7 @@ export const App = (): JSX.Element => {
   }
 
   return (
-    <AppConfigurationContext.Provider value={{ appConfig, setAppConfig }}>
+    <AppConfigurationContextNamespace.Provider value={{ appConfig, setAppConfig }}>
       <ApolloProvider client={apolloClient}>
         <ErrorBoundary FallbackComponent={ErrorScreen}>
           <NavigationContainer
@@ -298,6 +298,6 @@ export const App = (): JSX.Element => {
           </NavigationContainer>
         </ErrorBoundary>
       </ApolloProvider>
-    </AppConfigurationContext.Provider>
+    </AppConfigurationContextNamespace.Provider>
   )
 }

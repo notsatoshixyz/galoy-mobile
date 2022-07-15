@@ -14,9 +14,9 @@ export const defaultConfiguration: AppConfiguration = {
   isUsdDisabled: false,
 }
 
-export const AppConfigurationContext = createContext<AppConfigurationContext | undefined>(
-  undefined,
-)
+export const AppConfigurationContextNamespace = createContext<
+  AppConfigurationContext | undefined
+>(undefined)
 
 export const loadAppConfig = async (): Promise<AppConfiguration> => {
   const data = await loadJson(APP_CONFIGURATION_KEY)

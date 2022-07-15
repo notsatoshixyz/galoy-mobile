@@ -11,7 +11,7 @@ import "@mocks/react-native-geetest-module"
 import { WelcomePhoneInputScreen } from "@app/screens/phone-auth-screen"
 import {
   AppConfiguration,
-  AppConfigurationContext,
+  AppConfigurationContextNamespace,
   defaultConfiguration,
 } from "../../app/context/app-configuration"
 
@@ -24,7 +24,7 @@ describe("WelcomePhoneInputScreen", () => {
   afterEach(cleanup)
   it("render matches snapshot", () => {
     const tree = render(
-      <AppConfigurationContext.Provider
+      <AppConfigurationContextNamespace.Provider
         value={{
           appConfig: defaultConfiguration,
           setAppConfig: (config: AppConfiguration) => {},
@@ -33,13 +33,13 @@ describe("WelcomePhoneInputScreen", () => {
         <MockedProvider cache={cache}>
           <WelcomePhoneInputScreen />
         </MockedProvider>
-      </AppConfigurationContext.Provider>,
+      </AppConfigurationContextNamespace.Provider>,
     )
     expect(tree).toMatchSnapshot()
   })
   it("has TextInput", () => {
     const { queryByA11yLabel, queryByPlaceholderText } = render(
-      <AppConfigurationContext.Provider
+      <AppConfigurationContextNamespace.Provider
         value={{
           appConfig: defaultConfiguration,
           setAppConfig: (config: AppConfiguration) => {},
@@ -48,7 +48,7 @@ describe("WelcomePhoneInputScreen", () => {
         <MockedProvider cache={cache}>
           <WelcomePhoneInputScreen />
         </MockedProvider>
-      </AppConfigurationContext.Provider>,
+      </AppConfigurationContextNamespace.Provider>,
     )
     expect(queryByA11yLabel("Input phone number")).not.toBeNull()
     expect(
