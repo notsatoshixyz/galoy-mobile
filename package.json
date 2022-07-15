@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.6",
-    "@galoymoney/client": "file:.yalc/@galoymoney/client",
+    "@galoymoney/client": "^0.1.36",
     "@galoymoney/react-native-geetest-module": "^0.1.3",
     "@react-native-async-storage/async-storage": "^1.17.6",
     "@react-native-community/clipboard": "^1.2.3",
